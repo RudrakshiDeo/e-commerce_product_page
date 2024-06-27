@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+        <title>E-commerse Product Page</title>
+
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+        <script src="https://kit.fontawesome.com/a81368914c.js"></script>
+    </head>
+    <body>
+        <nav>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26">
+                        <path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 
+                        16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 
+                        12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg></a>
+                </li>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Our Products</a>
+                    <div class="dropdown-content">
+                        <a href="#">white chocolate</a>
+                        <a href="#">white chocolate</a>
+                    </div>
+                </li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <ul>
+                <li><a href="#"><b>CHOCOLATE</b></a></li>
+                <li class="hideOnMobile"><a href="#">Home</a></li>
+                <li class="hideOnMobile"><a href="#">Our Products</a></li>
+                <li class="hideOnMobile"><a href="#">About</a></li>
+                <li class="hideOnMobile"><a href="#">Contact</a></li>
+                <li>
+                    <a href="#"><span class="fa fa-shopping-cart"><sup>0</sup></span></a>
+                </li>
+                <li class="menu-button" onclick="showSidebar()">
+                    <a href="#"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26" width="26" height="26">
+                    <path d="M3 4H21V6H3V4ZM3 11H21V13H3V11ZM3 18H21V20H3V18Z"></path></svg></a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="container">
+            <div class="wrapper">
+                <div class="product-box">
+                    <div class="all-images">
+                        <div class="small-images">
+                            <img src="image/image1.png" onclick="clicking(this)">
+                            <img src="image/image2.jpg" onclick="clicking(this)">
+                            <img src="image/image3.jpg" onclick="clicking(this)">
+                            <img src="image/image4.jpg" onclick="clicking(this)">
+                        </div>
+                        <div class="main-images">
+                            <img src="image/image1.png" id="imgbox">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text">
+                    <div class="content">
+                        <p class="brand">Brand: Milka</p>
+                        <h2>Milka Oreo Chocolate</h2>
+                        <div class="review">
+                            <span>(4.2)</span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <div class="price-box">
+                            <p class="price">&#8377; 200</p>
+                            <strike>&#8377; 250</strike>
+                        </div>
+                        
+                        <p>Quantity: <input type="text" value="1"></p>
+                        <button>
+                            <span class="fa fa-shopping-cart"></span>
+                            Add to cart
+                        </button>
+                        <button>
+                            <span class="fa fa-shopping-cart"></span>
+                            Buy now
+                        </button><br><br>
+
+                        <h3>Description</h3>
+                        <p> Deliciously rich Milka Chocolate candy wrapped in crunchy Oreo cookies and luscious layers of vanilla crème. 
+                            Smooth and creamy delight with a wonderful textural crunch in every bite.
+                            A delectable treat ideal to satiate a sweet tooth or relish as a mid-meal snack.</p>
+                        <h4>Unit</h4>
+                        <p>100 g</p>
+                        <h4>Ingredients</h4>
+                        <p>Milk chocolate [sugar, cocoa butter, skimmed MILK powder, cocoa mass, sweet whey powder (from MILK), BUTTER fat, emulsifier: lecithins (SOYA); HAZELNUT mass, flavouring], vanilla flavoured milk cream [palm oil, sugar, sweet whey powder (from MILK), skimmed MILK powder 7%, BUTTER fat 2.7%, emulsifier: lecithins (SOYA); flavouring], cocoa biscuit [WHEAT flour, sugar, vegetable oils (palm, palm kernel), fat-reduced cocoa powder 6%, glucose syrup, raising agent: kalimhydrogencarbonate, sodiumhydrogencarbonat, ammoniumhydrogencarbonat; salt, emulsifier: lecithins (SOYA), flavouring.</p>
+                        <h4>Shelf Life</h4>
+                        <p>12 months</p>
+                        <h4>Country of Origin</h4>
+                        <p>Austria</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //Sidebar
+            function showSidebar()
+            {
+                const sidebar=document.querySelector('.sidebar')
+                sidebar.style.display= 'flex'
+            }
+            function hideSidebar()
+            {
+                const sidebar=document.querySelector('.sidebar')
+                sidebar.style.display= 'none'
+            }
+
+            //Product images
+            function clicking(smallImg) {
+                var fillImg = document.getElementById("imgbox");
+                fillImg.src = smallImg.src
+            }
+        </script>
+    </body>
+</html>
